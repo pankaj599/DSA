@@ -39,6 +39,8 @@ Sol2): Optimised: (JAVA)
 
 //Create a mp, whose key is the diff of target and arr[i] and value is the index:
 
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
 	Map<Integer, Integer> mp=new HashMap();
 	int[] arr=new int[2];
 
@@ -50,3 +52,5 @@ Sol2): Optimised: (JAVA)
 		}
 	} 
 	return new int[]  {-1,-1};
+	}
+}
