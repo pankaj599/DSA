@@ -1,0 +1,30 @@
+Best Time to Buy and Sell Stock:
+
+Q) You are given an array prices where prices[i] is the price of a given stock on the ith day.
+You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
+Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
+
+Sol:) (JAVA)
+
+// Create a variable buy which will kept the min value and diff which will kept the diff bw buy and current value. m will keep the max difference till now.
+
+class Solution {
+    public int maxProfit(int[] prices) {
+        int buy=prices[0];
+        int diff=0;
+        int m=Integer.MIN_VALUE;
+        boolean flag=false;
+        for(int i=1; i<prices.length;i++){
+            if(prices[i]<buy){
+                buy=prices[i];
+            }else{
+                flag=true;
+                diff=prices[i]-buy;
+                m=Math.max(m, diff);
+            }
+        }
+        if(flag)
+            return m;
+            return 0;
+    }
+}
